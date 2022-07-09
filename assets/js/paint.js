@@ -1,13 +1,16 @@
 function configureListeners() {
-    let images = // select img elements  
+    let images = document.querySelectorAll('img');
 
 
-     for (var i = 0; i < images.length; i++) {        
+     for (var i = 0; i < images.length; i++) {       
+        document.getElementById(images[i].id).addEventListener('mouseover', function(event){}) 
+        document.getElementById(images[i].id).addEventListener('mouseout', function(event){}) 
         // iterate over images and add mouseover event listeners      
     } 
 }
 
 function addOpacity(event) {
+    
     // add appropriate CSS class
     getProductInfo(event.target.id);     
 }
@@ -29,7 +32,10 @@ function getProductInfo(paintColor) {
     let colorName;  
     
     switch (paintColor) {
-        case 'pn1':           
+        case 'pn1':    
+            price= '$14.99'
+            colorName= 'Lime Green'
+            updatePrice(price, colorName)       
             // set variables for price and color name and invoke a function to update the price     
             break;           
         case 'pn2':
